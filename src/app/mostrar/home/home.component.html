@@ -1,0 +1,25 @@
+<div class="container">
+      
+        Ingrese un numero:<input type="number" class="form-control" placeholder="valor 1" id="val1" [(ngModel)]="val1"><br>
+        Ingrese un numero:<input type="number" class="form-control" placeholder="valor 2" id="val2" [(ngModel)]="val2"><br>
+      
+        <br>
+          <div class="col-md-3">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="seleccionada" name="operacion">
+                <option selected value="inicio">Elige una opcion</option>
+                <option value="1">sumar</option>
+                <option value="2">restar</option>
+                <option value="3">multiplicar</option>
+                <option value="4">dividir</option>
+            </select>
+          </div> 
+          <br>
+          <button  class="btn btn-info" (click)="operacion()">operacion</button>
+          <br> 
+            <span class="repuesta1" *ngIf="seleccionada!=='inicio' ; else mostrar"  [ngStyle]="{'color':sumar }" [ngStyle]="{'color':restar}"
+            [ngStyle]="{'color':multiplicar}"[ngStyle]="{'color':dividir}">El resultado es = {{total}} </span>
+            <ng-template #mostrar ><span class="respuesta2">resultado= no valido</span></ng-template>
+
+          
+</div>
+
